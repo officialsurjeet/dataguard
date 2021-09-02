@@ -106,12 +106,13 @@ dependencies {
         exclude group: "com.android.support"
     }
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-    implementation "androidx.core:core-ktx:+"
+    implementation "androidx.core:core-ktx:1.6.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
 
     implementation "com.snore.guard:dataguard:1.4.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.0"
 }
 repositories {
     mavenCentral()
