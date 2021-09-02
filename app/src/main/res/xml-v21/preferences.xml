@@ -97,7 +97,6 @@
                 android:summary="@string/summary_lan"
                 android:title="@string/setting_lan" />
             <MultiSelectListPreference
-                android:defaultValue="@array/default_wifi_home"
                 android:key="wifi_homes"
                 android:summary="@string/summary_wifi_home" />
             <eu.faircode.netguard.SwitchPreference

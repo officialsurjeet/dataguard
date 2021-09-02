@@ -1,19 +1,21 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
-def keystorePropertiesFile = rootProject.file("keystore.properties")
-def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+def versionMajor = 1
+def versionMinor = 0
+def versionPatch = 0
 
 android {
     compileSdkVersion = 30
 
     defaultConfig {
-        applicationId = "eu.faircode.netguard"
+        applicationId = "com.fulldive.extension.dataguard"
         versionName = "2.296"
         minSdkVersion 22
         targetSdkVersion 30
-        versionCode = 2021061401
-        archivesBaseName = "NetGuard-v$versionName"
+        versionCode versionMajor*10000+versionMinor*100+versionPatch
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        archivesBaseName = "DataGuard-v$versionName"
 
         externalNativeBuild {
             cmake {
@@ -31,10 +33,10 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file(keystoreProperties['storeFile'])
-            storePassword keystoreProperties['storePassword']
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
+            storeFile file('../keys/keys.jks')
+            storePassword System.getenv("FULLDIVE_KEYSTORE_PASSWORD")
+            keyAlias System.getenv("FULLDIVE_ALIAS")
+            keyPassword System.getenv("FULLDIVE_ALIAS_PASSWORD")
         }
     }
 
@@ -78,8 +80,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -99,4 +101,14 @@ dependencies {
         exclude group: "com.android.support"
     }
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
+
+    implementation "com.snore.guard:dataguard:1.4.0"
+}
+repositories {
+    mavenCentral()
+    maven { url "http://office.fulldive.com:8083" }
 }

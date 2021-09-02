@@ -1,24 +1,6 @@
 package eu.faircode.netguard;
 
-/*
-    This file is part of NetGuard.
-
-    NetGuard is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    NetGuard is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with NetGuard.  If not, see <http://www.gnu.org/licenses/>.
-
-    Copyright 2015-2019 by Marcel Bokhorst (M66B)
-*/
-
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -71,6 +53,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.util.List;
+
+import eu.faircode.netguard.appextension.AppExtensionWorkType;
+import eu.faircode.netguard.appextension.PopupManager;
 
 public class ActivityMain extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     private static final String TAG = "NetGuard.Main";
@@ -332,19 +317,19 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
             }
         });
 
-        final LinearLayout llFairEmail = findViewById(R.id.llFairEmail);
-        TextView tvFairEmail = findViewById(R.id.tvFairEmail);
-        tvFairEmail.setMovementMethod(LinkMovementMethod.getInstance());
-        Button btnFairEmail = findViewById(R.id.btnFairEmail);
-        boolean hintFairEmail = prefs.getBoolean("hint_fairemail", true);
-        llFairEmail.setVisibility(hintFairEmail ? View.VISIBLE : View.GONE);
-        btnFairEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                prefs.edit().putBoolean("hint_fairemail", false).apply();
-                llFairEmail.setVisibility(View.GONE);
-            }
-        });
+//        final LinearLayout llFairEmail = findViewById(R.id.llFairEmail);
+//        TextView tvFairEmail = findViewById(R.id.tvFairEmail);
+//        tvFairEmail.setMovementMethod(LinkMovementMethod.getInstance());
+//        Button btnFairEmail = findViewById(R.id.btnFairEmail);
+//        boolean hintFairEmail = prefs.getBoolean("hint_fairemail", true);
+//        llFairEmail.setVisibility(hintFairEmail ? View.VISIBLE : View.GONE);
+//        btnFairEmail.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                prefs.edit().putBoolean("hint_fairemail", false).apply();
+//                llFairEmail.setVisibility(View.GONE);
+//            }
+//        });
 
         showHints();
 
@@ -441,23 +426,35 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
             Log.e(TAG, ex.toString() + "\n" + Log.getStackTraceString(ex));
         }
 
-        // Support
-        LinearLayout llSupport = findViewById(R.id.llSupport);
-        TextView tvSupport = findViewById(R.id.tvSupport);
+//        // Support
+//        LinearLayout llSupport = findViewById(R.id.llSupport);
+//        TextView tvSupport = findViewById(R.id.tvSupport);
+//
+//        SpannableString content = new SpannableString(getString(R.string.app_support));
+//        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+//        tvSupport.setText(content);
 
-        SpannableString content = new SpannableString(getString(R.string.app_support));
-        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-        tvSupport.setText(content);
-
-        llSupport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(getIntentPro(ActivityMain.this));
-            }
-        });
+//        llSupport.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(getIntentPro(ActivityMain.this));
+//            }
+//        });
 
         // Handle intent
         checkExtras(getIntent());
+
+        new PopupManager().onAppStarted(this);
+        String workType = getIntent().getAction();
+        if (workType != null && workType.equals(AppExtensionWorkType.OPEN.INSTANCE.getId())) {
+            final Intent prepareIntent = VpnService.prepare(this);
+            if (prepareIntent != null) {
+                try {
+                    startActivityForResult(prepareIntent, REQUEST_VPN);
+                } catch (Exception ignored) {
+                }
+            }
+        }
     }
 
     @Override
@@ -610,6 +607,7 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_ROAMING)
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
                 ServiceSinkhole.reload("permission granted", this, false);
@@ -784,17 +782,17 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
             searchView.setQuery(search, true);
         }
 
-        markPro(menu.findItem(R.id.menu_log), ActivityPro.SKU_LOG);
-        if (!IAB.isPurchasedAny(this))
-            markPro(menu.findItem(R.id.menu_pro), null);
+//        markPro(menu.findItem(R.id.menu_log), ActivityPro.SKU_LOG);
+//        if (!IAB.isPurchasedAny(this))
+//            markPro(menu.findItem(R.id.menu_pro), null);
+//
+//        if (!Util.hasValidFingerprint(this) || getIntentInvite(this).resolveActivity(pm) == null)
+//            menu.removeItem(R.id.menu_invite);
+//
+//        if (getIntentSupport().resolveActivity(getPackageManager()) == null)
+//            menu.removeItem(R.id.menu_support);
 
-        if (!Util.hasValidFingerprint(this) || getIntentInvite(this).resolveActivity(pm) == null)
-            menu.removeItem(R.id.menu_invite);
-
-        if (getIntentSupport().resolveActivity(getPackageManager()) == null)
-            menu.removeItem(R.id.menu_support);
-
-        menu.findItem(R.id.menu_apps).setEnabled(getIntentApps(this).resolveActivity(pm) != null);
+//        menu.findItem(R.id.menu_apps).setEnabled(getIntentApps(this).resolveActivity(pm) != null);
 
         return true;
     }
@@ -891,29 +889,21 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
                 startActivity(new Intent(this, ActivitySettings.class));
                 return true;
 
-            case R.id.menu_pro:
-                startActivity(new Intent(ActivityMain.this, ActivityPro.class));
-                return true;
-
-            case R.id.menu_invite:
-                startActivityForResult(getIntentInvite(this), REQUEST_INVITE);
-                return true;
-
             case R.id.menu_legend:
                 menu_legend();
                 return true;
 
-            case R.id.menu_support:
-                startActivity(getIntentSupport());
-                return true;
+//            case R.id.menu_support:
+//                startActivity(getIntentSupport());
+//                return true;
 
             case R.id.menu_about:
                 menu_about();
                 return true;
 
-            case R.id.menu_apps:
-                menu_apps();
-                return true;
+//            case R.id.menu_apps:
+//                menu_apps();
+//                return true;
 
             default:
                 return super.onOptionsItemSelected(item);

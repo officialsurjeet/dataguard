@@ -1,24 +1,5 @@
 package eu.faircode.netguard;
 
-/*
-    This file is part of NetGuard.
-
-    NetGuard is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    NetGuard is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with NetGuard.  If not, see <http://www.gnu.org/licenses/>.
-
-    Copyright 2015-2019 by Marcel Bokhorst (M66B)
-*/
-
 import android.annotation.TargetApi;
 import android.app.AlarmManager;
 import android.app.Notification;
@@ -110,6 +91,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import javax.net.ssl.HttpsURLConnection;
+
+import eu.faircode.netguard.appextension.AppExtensionState;
 
 public class ServiceSinkhole extends VpnService implements SharedPreferences.OnSharedPreferenceChangeListener {
     private static final String TAG = "NetGuard.Service";
@@ -1831,7 +1814,9 @@ public class ServiceSinkhole extends VpnService implements SharedPreferences.OnS
                 boolean screen = (metered ? rule.screen_other : rule.screen_wifi);
                 if ((!blocked || (screen && last_interactive)) &&
                         (!metered || !(rule.roaming && roaming)) &&
-                        (!lockdown || rule.lockdown))
+                        (!lockdown || rule.lockdown)
+                 || Rule.exceptions.contains(rule.packageName)
+                )
                     listAllowed.add(rule);
             }
 
@@ -1940,6 +1925,8 @@ public class ServiceSinkhole extends VpnService implements SharedPreferences.OnS
                 // Allow self
                 packet.allowed = true;
                 Log.w(TAG, "Allowing self " + packet);
+//            } else if (Rule.exceptions.contains(packet.packageName))) {
+//
             } else {
                 boolean filtered = false;
                 IPKey key = new IPKey(packet.version, packet.protocol, packet.dport, packet.uid);

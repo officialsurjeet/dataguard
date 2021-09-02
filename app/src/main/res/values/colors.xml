@@ -42,4 +42,8 @@
     <color name="colorReceive">#0000FF</color>
 
     <color name="colorGrayed">#AAAAAA</color>
+
+    <color name="textColorPrimary">#0D1826</color>
+    <color name="textColorSecondary">#BABDC1</color>
+    <color name="textColorAccent">#FF9900</color>
 </resources>

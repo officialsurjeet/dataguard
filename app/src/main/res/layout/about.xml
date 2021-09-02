@@ -71,12 +71,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/app_copyright"
-                android:textAppearance="@style/TextSmall" />
-
             <Button
                 android:id="@+id/btnRate"
                 android:layout_width="wrap_content"

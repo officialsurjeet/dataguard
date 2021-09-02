@@ -1,0 +1,109 @@
+package eu.faircode.netguard.appextension
+
+import android.content.ContentProvider
+import android.content.ContentValues
+import android.content.Intent
+import android.database.Cursor
+import android.net.Uri
+import android.net.VpnService
+import android.os.Bundle
+import androidx.core.os.bundleOf
+import eu.faircode.netguard.ActivityMain
+import java.util.*
+
+class ExtensionContentProvider : ContentProvider() {
+
+    override fun call(method: String, arg: String?, extras: Bundle?): Bundle? {
+        return when (method.lowercase(Locale.ENGLISH)) {
+            AppExtensionWorkType.START.id -> {
+                context?.let { context ->
+                    LaunchHelper.startVPN(context)
+                }
+                null
+            }
+            AppExtensionWorkType.STOP.id -> {
+                context?.let { context ->
+                    LaunchHelper.stopVPN(context)
+                }
+                null
+            }
+            AppExtensionWorkType.OPEN.id -> {
+                context?.let { context ->
+                    val intent = Intent(context, ActivityMain::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    intent.putExtra(PREPARE_VPN, true)
+                    intent.action = AppExtensionWorkType.OPEN.id
+                    context.startActivity(intent)
+                }
+                null
+            }
+            AppExtensionWorkType.GetPermissionsRequired.id -> {
+                bundleOf(
+                    KEY_RESULT to context
+                        ?.let { context ->
+                            VpnService.prepare(context) != null
+                        }
+                        ?.or(false)
+                )
+            }
+            AppExtensionWorkType.GetStatus.id -> {
+                bundleOf(
+                    KEY_WORK_STATUS to (
+                        context?.let { context ->
+                            LaunchHelper.getCurrentExtensionState(context)
+                        }
+                            ?: { AppExtensionState.STOP.id }
+                        )
+                )
+            }
+            else -> {
+                super.call(method, arg, extras)
+            }
+        }
+    }
+
+    override fun onCreate(): Boolean {
+        return true
+    }
+
+    override fun insert(uri: Uri, values: ContentValues?): Uri {
+        context?.contentResolver?.notifyChange(uri, null)
+        return uri
+    }
+
+    override fun getType(uri: Uri): String? = null
+
+    override fun query(
+        uri: Uri,
+        projection: Array<String>?,
+        selection: String?,
+        selectionArgs: Array<String>?,
+        sortOrder: String?
+    ): Cursor? = null
+
+    override fun update(
+        uri: Uri,
+        values: ContentValues?,
+        selection: String?,
+        selectionArgs: Array<String>?
+    ): Int = 0
+
+    override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int = 0
+
+    companion object {
+        private const val PREFERENCE_AUTHORITY =
+            "com.fulldive.extension.dataguard.FulldiveContentProvider"
+        const val BASE_URL = "content://$PREFERENCE_AUTHORITY"
+        const val KEY_WORK_STATUS = "work_status"
+        const val KEY_RESULT = "result"
+        const val PREPARE_VPN = "prepare_vpn"
+    }
+}
+
+fun getContentUri(value: String): Uri {
+    return Uri
+        .parse(ExtensionContentProvider.BASE_URL)
+        .buildUpon().appendPath(ExtensionContentProvider.KEY_WORK_STATUS)
+        .appendPath(value)
+        .build()
+}
