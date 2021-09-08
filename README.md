@@ -28,7 +28,7 @@ Features:
 * Optionally forward ports, also to external addresses (not available if installed from the Play store)
 * Optionally notify when an application accesses the internet
 * Optionally record network usage per application per address
-* Optionally [block ads using a hosts file](https://github.com/M66B/NetGuard/blob/master/ADBLOCKING.md) (not available if installed from the Play store)
+* Optionally [block ads using a hosts file] (not available if installed from the Play store)
 * Material design theme with light and dark theme
 
 PRO features:
@@ -45,11 +45,6 @@ Requirements:
 
 * Android 5.1 or later
 * A [compatible device](#compatibility)
-
-Downloads:
-
-* [GitHub](https://github.com/M66B/NetGuard/releases)
-* [Google Play](https://play.google.com/store/apps/details?id=eu.faircode.netguard)
 
 Certificate fingerprints:
 

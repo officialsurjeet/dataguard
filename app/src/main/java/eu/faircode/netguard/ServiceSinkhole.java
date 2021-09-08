@@ -94,6 +94,8 @@ import javax.net.ssl.HttpsURLConnection;
 
 import eu.faircode.netguard.appextension.AppExtensionState;
 
+import static eu.faircode.netguard.appextension.ExtensionContentProviderKt.getContentUri;
+
 public class ServiceSinkhole extends VpnService implements SharedPreferences.OnSharedPreferenceChangeListener {
     private static final String TAG = "NetGuard.Service";
 
@@ -3279,6 +3281,9 @@ public class ServiceSinkhole extends VpnService implements SharedPreferences.OnS
         intent.putExtra(EXTRA_COMMAND, Command.start);
         intent.putExtra(EXTRA_REASON, reason);
         ContextCompat.startForegroundService(context, intent);
+
+        Uri uri = getContentUri(AppExtensionState.START.INSTANCE.getId());
+        context.getContentResolver().insert(uri, null);
     }
 
     public static void reload(String reason, Context context, boolean interactive) {
@@ -3289,6 +3294,8 @@ public class ServiceSinkhole extends VpnService implements SharedPreferences.OnS
             intent.putExtra(EXTRA_REASON, reason);
             intent.putExtra(EXTRA_INTERACTIVE, interactive);
             ContextCompat.startForegroundService(context, intent);
+            Uri uri = getContentUri(AppExtensionState.START.INSTANCE.getId());
+            context.getContentResolver().insert(uri, null);
         }
     }
 
@@ -3298,6 +3305,8 @@ public class ServiceSinkhole extends VpnService implements SharedPreferences.OnS
         intent.putExtra(EXTRA_REASON, reason);
         intent.putExtra(EXTRA_TEMPORARY, vpnonly);
         ContextCompat.startForegroundService(context, intent);
+        Uri uri = getContentUri(AppExtensionState.STOP.INSTANCE.getId());
+        context.getContentResolver().insert(uri, null);
     }
 
     public static void reloadStats(String reason, Context context) {

@@ -480,28 +480,28 @@ public class ActivitySettings extends AppCompatActivity implements SharedPrefere
     @TargetApi(Build.VERSION_CODES.M)
     public void onSharedPreferenceChanged(SharedPreferences prefs, String name) {
         // Pro features
-        if ("theme".equals(name)) {
-            if (!"teal".equals(prefs.getString(name, "teal")) && !IAB.isPurchased(ActivityPro.SKU_THEME, this)) {
-                prefs.edit().putString(name, "teal").apply();
-                ((ListPreference) getPreferenceScreen().findPreference(name)).setValue("teal");
-                startActivity(new Intent(this, ActivityPro.class));
-                return;
-            }
-        } else if ("install".equals(name)) {
-            if (prefs.getBoolean(name, false) && !IAB.isPurchased(ActivityPro.SKU_NOTIFY, this)) {
-                prefs.edit().putBoolean(name, false).apply();
-                ((TwoStatePreference) getPreferenceScreen().findPreference(name)).setChecked(false);
-                startActivity(new Intent(this, ActivityPro.class));
-                return;
-            }
-        } else if ("show_stats".equals(name)) {
-            if (prefs.getBoolean(name, false) && !IAB.isPurchased(ActivityPro.SKU_SPEED, this)) {
-                prefs.edit().putBoolean(name, false).apply();
-                startActivity(new Intent(this, ActivityPro.class));
-                return;
-            }
-            ((TwoStatePreference) getPreferenceScreen().findPreference(name)).setChecked(prefs.getBoolean(name, false));
-        }
+//        if ("theme".equals(name)) {
+//            if (!"teal".equals(prefs.getString(name, "teal")) && !IAB.isPurchased(ActivityPro.SKU_THEME, this)) {
+//                prefs.edit().putString(name, "teal").apply();
+//                ((ListPreference) getPreferenceScreen().findPreference(name)).setValue("teal");
+//                startActivity(new Intent(this, ActivityPro.class));
+//                return;
+//            }
+//        } else if ("install".equals(name)) {
+//            if (prefs.getBoolean(name, false) && !IAB.isPurchased(ActivityPro.SKU_NOTIFY, this)) {
+//                prefs.edit().putBoolean(name, false).apply();
+//                ((TwoStatePreference) getPreferenceScreen().findPreference(name)).setChecked(false);
+//                startActivity(new Intent(this, ActivityPro.class));
+//                return;
+//            }
+//        } else if ("show_stats".equals(name)) {
+//            if (prefs.getBoolean(name, false) && !IAB.isPurchased(ActivityPro.SKU_SPEED, this)) {
+//                prefs.edit().putBoolean(name, false).apply();
+//                startActivity(new Intent(this, ActivityPro.class));
+//                return;
+//            }
+//            ((TwoStatePreference) getPreferenceScreen().findPreference(name)).setChecked(prefs.getBoolean(name, false));
+//        }
 
         Object value = prefs.getAll().get(name);
         if (value instanceof String && "".equals(value))

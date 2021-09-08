@@ -11,14 +11,10 @@ object LaunchHelper {
 
     fun startVPN(context: Context) {
         switchDataGuard(context, true)
-        val uri = getContentUri(AppExtensionState.START.id)
-        context.contentResolver.insert(uri, null)
     }
 
     fun stopVPN(context: Context) {
         switchDataGuard(context, false)
-        val uri = getContentUri(AppExtensionState.STOP.id)
-        context.contentResolver.insert(uri, null)
     }
 
     fun getCurrentExtensionState(context: Context): String {

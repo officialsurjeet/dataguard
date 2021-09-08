@@ -124,15 +124,15 @@
                 android:value=".ActivityMain" />
         </activity>
 
-<!--        <activity-->
-<!--            android:name=".ActivityPro"-->
-<!--            android:configChanges="orientation|screenSize"-->
-<!--            android:label="@string/title_pro"-->
-<!--            android:parentActivityName=".ActivityMain">-->
-<!--            <meta-data-->
-<!--                android:name="android.support.PARENT_ACTIVITY"-->
-<!--                android:value=".ActivityMain" />-->
-<!--        </activity>-->
+        <activity
+            android:name=".ActivityPro"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_pro"
+            android:parentActivityName=".ActivityMain">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ActivityMain" />
+        </activity>
 
         <activity
             android:name=".ActivityDns"

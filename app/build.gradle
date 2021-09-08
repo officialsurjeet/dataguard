@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 
 def versionMajor = 1
 def versionMinor = 0
-def versionPatch = 0
+def versionPatch = 1
 
 android {
     compileSdkVersion = 30
@@ -62,8 +62,8 @@ android {
             proguardFiles.add(file('proguard-rules.pro'))
             signingConfig signingConfigs.release
             buildConfigField "boolean", "PLAY_STORE_RELEASE", "false"
-            buildConfigField "String", "HOSTS_FILE_URI", "\"https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts\""
-            buildConfigField "String", "GITHUB_LATEST_API", "\"https://api.github.com/repos/M66B/NetGuard/releases/latest\""
+            buildConfigField "String", "HOSTS_FILE_URI", "\"\""
+            buildConfigField "String", "GITHUB_LATEST_API", "\"\""
         }
         play {
             minifyEnabled = true
