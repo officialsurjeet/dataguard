@@ -74,8 +74,6 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
     private AlertDialog dialogLegend = null;
     private AlertDialog dialogAbout = null;
 
-    private IAB iab = null;
-
     private static final int REQUEST_VPN = 1;
     private static final int REQUEST_INVITE = 2;
     private static final int REQUEST_LOGCAT = 3;
@@ -396,50 +394,6 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
         // Fill application list
         updateApplicationList(getIntent().getStringExtra(EXTRA_SEARCH));
 
-        // Update IAB SKUs
-        try {
-            iab = new IAB(new IAB.Delegate() {
-                @Override
-                public void onReady(IAB iab) {
-                    try {
-                        iab.updatePurchases();
-
-                        if (!IAB.isPurchased(ActivityPro.SKU_LOG, ActivityMain.this))
-                            prefs.edit().putBoolean("log", false).apply();
-                        if (!IAB.isPurchased(ActivityPro.SKU_THEME, ActivityMain.this)) {
-                            if (!"teal".equals(prefs.getString("theme", "teal")))
-                                prefs.edit().putString("theme", "teal").apply();
-                        }
-                        if (!IAB.isPurchased(ActivityPro.SKU_NOTIFY, ActivityMain.this))
-                            prefs.edit().putBoolean("install", false).apply();
-                        if (!IAB.isPurchased(ActivityPro.SKU_SPEED, ActivityMain.this))
-                            prefs.edit().putBoolean("show_stats", false).apply();
-                    } catch (Throwable ex) {
-                        Log.e(TAG, ex.toString() + "\n" + Log.getStackTraceString(ex));
-                    } finally {
-                        iab.unbind();
-                    }
-                }
-            }, this);
-            iab.bind();
-        } catch (Throwable ex) {
-            Log.e(TAG, ex.toString() + "\n" + Log.getStackTraceString(ex));
-        }
-
-//        // Support
-//        LinearLayout llSupport = findViewById(R.id.llSupport);
-//        TextView tvSupport = findViewById(R.id.tvSupport);
-//
-//        SpannableString content = new SpannableString(getString(R.string.app_support));
-//        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-//        tvSupport.setText(content);
-
-//        llSupport.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(getIntentPro(ActivityMain.this));
-//            }
-//        });
 
         // Handle intent
         checkExtras(getIntent());
@@ -489,12 +443,6 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
         DatabaseHelper.getInstance(this).addAccessChangedListener(accessChangedListener);
         if (adapter != null)
             adapter.notifyDataSetChanged();
-
-        PackageManager pm = getPackageManager();
-        LinearLayout llSupport = findViewById(R.id.llSupport);
-        llSupport.setVisibility(
-                IAB.isPurchasedAny(this) || getIntentPro(this).resolveActivity(pm) == null
-                        ? View.GONE : View.VISIBLE);
 
         super.onResume();
     }
@@ -556,11 +504,6 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
         if (dialogAbout != null) {
             dialogAbout.dismiss();
             dialogAbout = null;
-        }
-
-        if (iab != null) {
-            iab.unbind();
-            iab = null;
         }
 
         super.onDestroy();
@@ -782,29 +725,7 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
             searchView.setQuery(search, true);
         }
 
-//        markPro(menu.findItem(R.id.menu_log), ActivityPro.SKU_LOG);
-//        if (!IAB.isPurchasedAny(this))
-//            markPro(menu.findItem(R.id.menu_pro), null);
-//
-//        if (!Util.hasValidFingerprint(this) || getIntentInvite(this).resolveActivity(pm) == null)
-//            menu.removeItem(R.id.menu_invite);
-//
-//        if (getIntentSupport().resolveActivity(getPackageManager()) == null)
-//            menu.removeItem(R.id.menu_support);
-
-//        menu.findItem(R.id.menu_apps).setEnabled(getIntentApps(this).resolveActivity(pm) != null);
-
         return true;
-    }
-
-    private void markPro(MenuItem menu, String sku) {
-        if (sku == null || !IAB.isPurchased(sku, this)) {
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-            boolean dark = prefs.getBoolean("dark_theme", false);
-            SpannableStringBuilder ssb = new SpannableStringBuilder("  " + menu.getTitle());
-            ssb.setSpan(new ImageSpan(this, dark ? R.drawable.ic_shopping_cart_white_24dp : R.drawable.ic_shopping_cart_black_24dp), 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            menu.setTitle(ssb);
-        }
     }
 
     @Override
@@ -877,10 +798,7 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
 
             case R.id.menu_log:
                 if (Util.canFilter(this))
-                    if (IAB.isPurchased(ActivityPro.SKU_LOG, this))
                         startActivity(new Intent(this, ActivityLog.class));
-                    else
-                        startActivity(new Intent(this, ActivityPro.class));
                 else
                     Toast.makeText(this, R.string.msg_unavailable, Toast.LENGTH_SHORT).show();
                 return true;
@@ -1235,42 +1153,10 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
         dialogAbout.show();
     }
 
-    private void menu_apps() {
-        startActivity(getIntentApps(this));
-    }
-
-    private static Intent getIntentPro(Context context) {
-        if (Util.isPlayStoreInstall(context))
-            return new Intent(context, ActivityPro.class);
-        else {
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://contact.faircode.eu/?product=netguardstandalone"));
-            return intent;
-        }
-    }
-
-    private static Intent getIntentInvite(Context context) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.app_name));
-        intent.putExtra(Intent.EXTRA_TEXT, context.getString(R.string.msg_try) + "\n\nhttps://www.netguard.me/\n\n");
-        return intent;
-    }
-
-    private static Intent getIntentApps(Context context) {
-        return new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/dev?id=8420080860664580239"));
-    }
-
     private static Intent getIntentRate(Context context) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + context.getPackageName()));
         if (intent.resolveActivity(context.getPackageManager()) == null)
             intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + context.getPackageName()));
-        return intent;
-    }
-
-    private static Intent getIntentSupport() {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("https://github.com/M66B/NetGuard/blob/master/FAQ.md"));
         return intent;
     }
 

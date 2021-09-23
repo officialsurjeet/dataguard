@@ -69,11 +69,6 @@ public class ActivityLog extends AppCompatActivity implements SharedPreferences.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (!IAB.isPurchased(ActivityPro.SKU_LOG, this)) {
-            startActivity(new Intent(this, ActivityPro.class));
-            finish();
-        }
-
         Util.setTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.logging);
@@ -237,26 +232,22 @@ public class ActivityLog extends AppCompatActivity implements SharedPreferences.
                                 startActivity(lookupPort);
                                 return true;
 
-                            case R.id.menu_allow:
-                                if (IAB.isPurchased(ActivityPro.SKU_FILTER, ActivityLog.this)) {
-                                    DatabaseHelper.getInstance(ActivityLog.this).updateAccess(packet, dname, 0);
-                                    ServiceSinkhole.reload("allow host", ActivityLog.this, false);
-                                    Intent main = new Intent(ActivityLog.this, ActivityMain.class);
-                                    main.putExtra(ActivityMain.EXTRA_SEARCH, Integer.toString(uid));
-                                    startActivity(main);
-                                } else
-                                    startActivity(new Intent(ActivityLog.this, ActivityPro.class));
+                            case R.id.menu_allow: {
+                                DatabaseHelper.getInstance(ActivityLog.this).updateAccess(packet, dname, 0);
+                                ServiceSinkhole.reload("allow host", ActivityLog.this, false);
+                                Intent main = new Intent(ActivityLog.this, ActivityMain.class);
+                                main.putExtra(ActivityMain.EXTRA_SEARCH, Integer.toString(uid));
+                                startActivity(main);
+                            }
                                 return true;
 
-                            case R.id.menu_block:
-                                if (IAB.isPurchased(ActivityPro.SKU_FILTER, ActivityLog.this)) {
-                                    DatabaseHelper.getInstance(ActivityLog.this).updateAccess(packet, dname, 1);
-                                    ServiceSinkhole.reload("block host", ActivityLog.this, false);
-                                    Intent main = new Intent(ActivityLog.this, ActivityMain.class);
-                                    main.putExtra(ActivityMain.EXTRA_SEARCH, Integer.toString(uid));
-                                    startActivity(main);
-                                } else
-                                    startActivity(new Intent(ActivityLog.this, ActivityPro.class));
+                            case R.id.menu_block: {
+                                DatabaseHelper.getInstance(ActivityLog.this).updateAccess(packet, dname, 1);
+                                ServiceSinkhole.reload("block host", ActivityLog.this, false);
+                                Intent main = new Intent(ActivityLog.this, ActivityMain.class);
+                                main.putExtra(ActivityMain.EXTRA_SEARCH, Integer.toString(uid));
+                                startActivity(main);
+                            }
                                 return true;
 
                             case R.id.menu_copy:
