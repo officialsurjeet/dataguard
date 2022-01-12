@@ -1,0 +1,2 @@
+ninja: Entering directory `/Users/Maks/StudioProjects/NetGuard/app/.cxx/cmake/play/arm64-v8a'
+ninja: no work to do.

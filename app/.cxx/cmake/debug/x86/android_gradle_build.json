@@ -1,0 +1,40 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/Users/Maks/StudioProjects/NetGuard/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/Maks/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/Users/Maks/StudioProjects/NetGuard/app/.cxx/cmake/debug/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/Maks/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/Users/Maks/StudioProjects/NetGuard/app/.cxx/cmake/debug/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "netguard-Debug-x86": {
+      "buildCommandComponents": [
+        "/Users/Maks/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/Maks/StudioProjects/NetGuard/app/.cxx/cmake/debug/x86",
+        "netguard"
+      ],
+      "buildType": "debug",
+      "abi": "x86",
+      "artifactName": "netguard",
+      "output": "/Users/Maks/StudioProjects/NetGuard/app/build/intermediates/cmake/debug/obj/x86/libnetguard.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": []
+}

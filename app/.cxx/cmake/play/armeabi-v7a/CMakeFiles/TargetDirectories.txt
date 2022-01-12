@@ -1,0 +1,3 @@
+/Users/Maks/StudioProjects/NetGuard/app/.cxx/cmake/play/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/Maks/StudioProjects/NetGuard/app/.cxx/cmake/play/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/Maks/StudioProjects/NetGuard/app/.cxx/cmake/play/armeabi-v7a/CMakeFiles/netguard.dir

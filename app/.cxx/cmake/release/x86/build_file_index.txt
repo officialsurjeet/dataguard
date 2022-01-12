@@ -1,0 +1,1 @@
+/Users/Maks/StudioProjects/NetGuard/app/CMakeLists.txt

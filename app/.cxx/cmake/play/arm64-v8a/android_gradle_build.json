@@ -1,0 +1,40 @@
+{
+  "stringTable": {},
+  "buildFiles": [
+    "/Users/Maks/StudioProjects/NetGuard/app/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/Users/Maks/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+      "-C",
+      "/Users/Maks/StudioProjects/NetGuard/app/.cxx/cmake/play/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/Users/Maks/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+    "-C",
+    "/Users/Maks/StudioProjects/NetGuard/app/.cxx/cmake/play/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "netguard-Release-arm64-v8a": {
+      "buildCommandComponents": [
+        "/Users/Maks/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja",
+        "-C",
+        "/Users/Maks/StudioProjects/NetGuard/app/.cxx/cmake/play/arm64-v8a",
+        "netguard"
+      ],
+      "buildType": "release",
+      "abi": "arm64-v8a",
+      "artifactName": "netguard",
+      "output": "/Users/Maks/StudioProjects/NetGuard/app/build/intermediates/cmake/play/obj/arm64-v8a/libnetguard.so",
+      "runtimeFiles": []
+    }
+  },
+  "toolchains": {},
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": []
+}
