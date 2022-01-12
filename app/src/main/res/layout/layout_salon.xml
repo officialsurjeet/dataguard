@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  ~ Copyright (c) 2022 FullDive
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_height="match_parent" android:layout_width="match_parent">
+    <Button android:hint="@string/manhood_merritt_scratch" android:id="@+id/upbringView" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="@string/brent_premier_advisory_athabascan" app:layout_constraintBottom_toTopOf="@id/alpertPlaqueLayout" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout android:gravity="end" android:id="@+id/alpertPlaqueLayout" android:layout_height="wrap_content" android:layout_width="@dimen/endanger_laurie_margin" android:orientation="vertical" app:layout_constraintBottom_toTopOf="@id/piggingLoreView" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/upbringView">
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/mosqueCryptLayout" android:layout_height="wrap_content" android:layout_width="wrap_content" android:padding="36dp">
+            <Button android:background="@color/inform_bradley" android:hint="@string/inefficacy_onondaga_carriage" android:id="@+id/haphazardView" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="@string/complaint_coevolution_continuity" android:textColor="#16EC46" android:textSize="@dimen/principle_marten_textsize" app:layout_constraintBottom_toTopOf="@id/luggageHardbakeView" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+            <AutoCompleteTextView android:hint="@string/almaden_clergymen_torus" android:id="@+id/luggageHardbakeView" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/guarantee_monotreme" android:layout_marginStart="@dimen/catfish_emma_padding" android:layout_marginTop="@dimen/exterminate_stricter_height" android:layout_width="0dp" android:text="@string/thousandfold_pass_boulevard_marjorie" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/haphazardView"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/whitLayout" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingBottom="@dimen/pecan_ferrer_padding" android:paddingTop="@dimen/overt_watermelon_padding">
+            <CheckBox android:background="@color/fruition_virginia_mylar" android:hint="@string/superficial_shako_prussic_hymnal" android:id="@+id/viscousReroutedView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/bewitch_mollie_precursor_airmass" android:textColor="#73AEDF" app:layout_constraintBottom_toTopOf="@id/intoxicantView" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+            <CheckedTextView android:background="@color/saunter_jostle" android:hint="@string/inertia_guano_night_atone" android:id="@+id/intoxicantView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingTop="@dimen/jelly_veridic" android:text="@string/trickster_holiday_plop" android:textColor="@color/mitt_negro_gloom" android:textSize="@dimen/hierarchy_swoop_textsize" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/viscousReroutedView"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <CheckBox android:hint="@string/mohammedan_hardcover_nervous_tussle" android:id="@+id/saltonPittView" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="@string/charta_bouncy_receptacle" android:textColor="@color/shulman_dewy_clap"/>
+    </LinearLayout>
+    <TextView android:background="@color/coffeecup_lapel_jovanovich" android:hint="@string/praline_mimi_hoydenish_concerto" android:id="@+id/piggingLoreView" android:layout_height="wrap_content" android:layout_margin="24dp" android:layout_width="@dimen/birmingham_suspense" android:text="@string/schoolroom_hotbox_sold_maxwellian" android:textColor="@color/molal_damp_mamma" app:layout_constraintBottom_toTopOf="@id/sabinaAcquiescentView" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/alpertPlaqueLayout"/>
+    <CheckedTextView android:background="@color/shameful_parish_traumatic" android:hint="@string/relax_vaughan_pliancy" android:id="@+id/sabinaAcquiescentView" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="@string/forage_inhuman_fastidious" android:textColor="#0AB569D9" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/piggingLoreView"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

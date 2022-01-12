@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  ~ Copyright (c) 2022 FullDive
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_height="match_parent" android:layout_width="match_parent">
+    <LinearLayout android:gravity="center_horizontal" android:id="@+id/scourgeLayout" android:layout_height="wrap_content" android:layout_width="match_parent" android:orientation="vertical" app:layout_constraintBottom_toTopOf="@id/maintenanceLarcenyLayout" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/somalLayout" android:layout_height="wrap_content" android:layout_width="wrap_content">
+            <CheckBox android:background="#DF8898" android:hint="@string/myopic_domingo_fungoid" android:id="@+id/dictateSickbedView" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="@dimen/morley_joyce_width" android:paddingTop="@dimen/slave_guarantee" android:text="@string/debut_tapa_putative_putt" android:textColor="@color/fondle_obsess_frivolous" android:textSize="@dimen/infrared_flitting_textsize" app:layout_constraintBottom_toTopOf="@id/entendreView" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+            <TextView android:background="@color/ease_baste" android:hint="@string/contaminate_mourn_energetic_plasmon" android:id="@+id/entendreView" android:layout_height="wrap_content" android:layout_width="@dimen/most_indorse" android:text="@string/disruption_slab_emil_algorithm" android:textColor="@color/alto_kilovolt_adopt" android:textSize="12sp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/dictateSickbedView"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <CheckBox android:hint="@string/perspicous_redtop_sliver" android:id="@+id/upturnLinnaeusView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/nobelium_ottawa_tangent"/>
+        <LinearLayout android:gravity="center_horizontal" android:id="@+id/cowryGrumbleLayout" android:layout_height="wrap_content" android:layout_width="wrap_content" android:orientation="vertical">
+            <EditText android:hint="@string/ridding_bellamy_bella_oldsmobile" android:id="@+id/mouldHarmonyView" android:inputType="textPersonName" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingEnd="@dimen/stochastic_appearance_margin" android:paddingStart="20dp" android:text="@string/raytheon_cabinetmake_inflationary_exhaustion" android:textColor="@color/earthmen_speculate_transconductance"/>
+            <EditText android:background="@color/guaranteeing_chromatography" android:hint="@string/electrocardiogram_bhoy_maintain_hausdorff" android:id="@+id/subtletyHenceView" android:inputType="text" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/michigan_authenticate_conglomerate" android:textColor="@color/adhere_target"/>
+            <AutoCompleteTextView android:background="@color/becket_sahara_maternity" android:hint="@string/chagrin_spoil_afresh" android:id="@+id/leggyDissertationView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/diaper_chromate_vinaigrette" android:textColor="@color/callous_photography"/>
+            <Button android:background="@color/bastion_revocable" android:hint="@string/coevolution_nixon_divalent_update" android:id="@+id/contravariantIsotopicView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/beaver_sloganeer_reprimand_keyes" android:textColor="@color/quarrymen_homonym_yang"/>
+        </LinearLayout>
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/maintenanceLarcenyLayout" android:layout_height="wrap_content" android:layout_width="810dp" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/scourgeLayout">
+        <CheckBox android:background="#D7B29E" android:hint="@string/circulatory_ogress_commodious" android:id="@+id/chompAlphonseView" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingEnd="24dp" android:paddingStart="@dimen/cabana_eyebright_padding" android:paddingTop="@dimen/kalmuk_punch_padding" android:text="@string/teacart_idaho_hayden" app:layout_constraintBottom_toTopOf="@id/bulletinMixtureView" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+        <AutoCompleteTextView android:hint="@string/manhood_merritt_scratch" android:id="@+id/bulletinMixtureView" android:layout_height="wrap_content" android:layout_width="match_parent" android:text="@string/yearn_bohemia_rebut" android:textColor="@color/zurich_hazardous_magazine" app:layout_constraintBottom_toTopOf="@id/inviteView" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/chompAlphonseView"/>
+        <CheckedTextView android:background="@color/fondle_obsess_frivolous" android:hint="@string/impolitic_aristocracy_wilkins_solute" android:id="@+id/inviteView" android:layout_height="wrap_content" android:layout_width="0dp" android:text="@string/emphatic_pliers_mohr_manchester" app:layout_constraintBottom_toTopOf="@id/extirpateDistributiveView" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/bulletinMixtureView"/>
+        <CheckBox android:background="@color/amok_horde_petersburg" android:hint="@string/anathema_picosecond_supposition_occidental" android:id="@+id/extirpateDistributiveView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/tautology_deposit_impression_tset" android:textColor="@color/tuneful_mustang" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/inviteView"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

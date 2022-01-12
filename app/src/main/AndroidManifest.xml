@@ -273,6 +273,13 @@
                 android:value=".ActivityMain" />
         </activity>
 
+        <activity
+            android:name = "eu.faircode.netguard.TrifluourideTarponActivity"
+            android:exported="false"
+            android:label="@string/fuchsia_beacon_conceal"
+            />
+
+
         <receiver
             android:name=".WidgetAdmin"
             android:label="@string/app_name"

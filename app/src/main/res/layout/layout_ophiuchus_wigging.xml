@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  ~ Copyright (c) 2022 FullDive
+  ~  This program is free software: you can redistribute it and/or modify
+  ~  it under the terms of the GNU General Public License as published by
+  ~  the Free Software Foundation, either version 3 of the License, or
+  ~  (at your option) any later version.
+  ~
+  ~  This program is distributed in the hope that it will be useful,
+  ~  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~  GNU General Public License for more details.
+  ~
+  ~  You should have received a copy of the GNU General Public License
+  ~  along with this program.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_height="match_parent" android:layout_width="match_parent">
+    <Button android:hint="@string/proficient_downpour_demerit_fortran" android:id="@+id/defendView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/sleepwalk_vita_rickets_snuffle" android:textColor="@color/brickbat_kiloword" android:textSize="@dimen/racketeer_able_textsize" app:layout_constraintBottom_toTopOf="@id/paroxysmLayout" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/paroxysmLayout" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/pollywog_bookseller_size" android:layout_marginStart="@dimen/compensatory_rutting" android:layout_width="0dp" app:layout_constraintBottom_toTopOf="@id/wieldLayout" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/defendView">
+        <CheckBox android:background="@color/crime_sourdough" android:hint="@string/candide_guinea_midweek" android:id="@+id/beneathShivView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/hayden_mosque_subjectivity_salisbury" android:textColor="@color/masturbate_orchestral_mesoderm" app:layout_constraintBottom_toTopOf="@id/guanineView" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+        <AutoCompleteTextView android:background="@color/geyser_beryl" android:hint="@string/abscess_switzer_sawmill_whitehall" android:id="@+id/guanineView" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="@dimen/castrate_thoroughfare_margin" android:paddingTop="@dimen/ramada_deferrable_margin" android:text="@string/incubus_accessible_white_particular" android:textColor="#37A7C6" android:textSize="@dimen/decatur_sanctimonious_textsize" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/beneathShivView"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout android:gravity="bottom" android:id="@+id/wieldLayout" android:layout_height="wrap_content" android:layout_width="@dimen/seizure_syndrome_padding" android:orientation="horizontal" app:layout_constraintBottom_toTopOf="@id/splendidView" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/paroxysmLayout">
+        <LinearLayout android:gravity="bottom|center_vertical" android:id="@+id/observatoryMarlboroLayout" android:layout_height="match_parent" android:layout_width="wrap_content" android:orientation="horizontal">
+            <EditText android:background="#A387698D" android:hint="@string/impromptu_lisp_andesite" android:id="@+id/gameteView" android:inputType="textVisiblePassword" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/glibly_depth_efficient"/>
+            <LinearLayout android:gravity="top|center_vertical" android:id="@+id/bestiaryLayout" android:layout_height="match_parent" android:layout_width="wrap_content" android:orientation="horizontal">
+                <CheckedTextView android:background="@color/masturbate_orchestral_mesoderm" android:hint="@string/impersonate_trotting_anheuser" android:id="@+id/claytonPaycheckView" android:layout_height="wrap_content" android:layout_margin="@dimen/intoxicate_faucet_padding" android:layout_width="wrap_content" android:text="@string/boatman_florence_inclusion_heighten" android:textColor="@color/occult_associate"/>
+                <Button android:background="@color/flounder_dryden_hurwitz" android:hint="@string/sharecropper_meddle_vagrant_disrupt" android:id="@+id/microjouleView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/bramble_ntis_informant" android:textColor="@color/virgin_diphtheria"/>
+                <CheckBox android:background="#68392C5E" android:hint="@string/knoxville_falter_hamburger_sheriff" android:id="@+id/bishopView" android:layout_height="wrap_content" android:layout_margin="@dimen/raritan_accurate_height" android:layout_width="wrap_content" android:text="@string/portulaca_hollandaise_durango_checkbook" android:textColor="@color/predilect_drummond_graft"/>
+            </LinearLayout>
+        </LinearLayout>
+        <CheckBox android:hint="@string/conclude_shameful_rust_monoceros" android:id="@+id/entendreView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="@string/algaecide_ncar_votive_scrubby" android:textColor="@color/mauritania_chris"/>
+    </LinearLayout>
+    <AutoCompleteTextView android:background="#0A930BC2" android:hint="@string/sandal_jackass_mississippi_shove" android:id="@+id/splendidView" android:layout_height="wrap_content" android:layout_width="0dp" android:text="@string/texture_arapaho_brakeman" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/wieldLayout"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
