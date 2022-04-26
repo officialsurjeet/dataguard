@@ -22,6 +22,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -43,7 +44,7 @@ public class WidgetMain extends AppWidgetProvider {
             try {
                 Intent intent = new Intent(enabled ? WidgetAdmin.INTENT_OFF : WidgetAdmin.INTENT_ON);
                 intent.setPackage(context.getPackageName());
-                PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent pi = PendingIntent.getBroadcast(context, 0, intent, getPendingIntentFlags());
                 for (int id : appWidgetIds) {
                     RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widgetmain);
                     views.setOnClickPendingIntent(R.id.ivEnabled, pi);
@@ -62,5 +63,13 @@ public class WidgetMain extends AppWidgetProvider {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         int appWidgetIds[] = AppWidgetManager.getInstance(context).getAppWidgetIds(new ComponentName(context, WidgetMain.class));
         update(appWidgetIds, appWidgetManager, context);
+    }
+
+    private static int getPendingIntentFlags() {
+        int flags = PendingIntent.FLAG_UPDATE_CURRENT;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            flags = flags + PendingIntent.FLAG_IMMUTABLE;
+        }
+        return flags;
     }
 }

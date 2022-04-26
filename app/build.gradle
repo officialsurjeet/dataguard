@@ -18,16 +18,16 @@ apply plugin: 'kotlin-android'
 
 def versionMajor = 1
 def versionMinor = 0
-def versionPatch = 5
+def versionPatch = 6
 
 android {
-    compileSdkVersion = 30
+    compileSdkVersion = 32
 
     defaultConfig {
         applicationId = "com.fulldive.extension.dataguard"
         versionName = "2.296"
         minSdkVersion 22
-        targetSdkVersion 30
+        targetSdkVersion 32
         versionCode versionMajor*10000+versionMinor*100+versionPatch
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         archivesBaseName = "DataGuard-v$versionName"
@@ -73,7 +73,6 @@ android {
     buildTypes {
         release {
             minifyEnabled = true
-            useProguard = true
             proguardFiles.add(file('proguard-rules.pro'))
             signingConfig signingConfigs.release
             buildConfigField "boolean", "PLAY_STORE_RELEASE", "false"
@@ -82,7 +81,6 @@ android {
         }
         play {
             minifyEnabled = true
-            useProguard = true
             signingConfig signingConfigs.release
             proguardFiles.add(file('proguard-rules.pro'))
             buildConfigField "boolean", "PLAY_STORE_RELEASE", "true"
@@ -91,7 +89,6 @@ android {
         }
         debug {
             minifyEnabled = true
-            useProguard = true
             proguardFiles.add(file('proguard-rules.pro'))
             buildConfigField "boolean", "PLAY_STORE_RELEASE", "false"
             buildConfigField "String", "HOSTS_FILE_URI", "\"https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts\""
@@ -126,10 +123,8 @@ dependencies {
 
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
 
-    implementation "com.snore.guard:dataguard:1.4.0"
     implementation "androidx.constraintlayout:constraintlayout:2.1.0"
 }
 repositories {
     mavenCentral()
-    maven { url "http://office.fulldive.com:8083" }
 }
