@@ -15,7 +15,6 @@
 
 package eu.faircode.netguard;
 
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -32,13 +31,8 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
-import android.text.style.ImageSpan;
-import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -68,6 +62,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.util.List;
+import java.util.Locale;
 
 import eu.faircode.netguard.appextension.AppExtensionWorkType;
 import eu.faircode.netguard.appextension.PopupManager;
@@ -813,7 +808,7 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
 
             case R.id.menu_log:
                 if (Util.canFilter(this))
-                        startActivity(new Intent(this, ActivityLog.class));
+                    startActivity(new Intent(this, ActivityLog.class));
                 else
                     Toast.makeText(this, R.string.msg_unavailable, Toast.LENGTH_SHORT).show();
                 return true;
@@ -959,13 +954,28 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
 
     private void checkDoze() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            final Intent doze = new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS);
+            Intent doze;
+            int textId;
+            if (Build.MANUFACTURER.toLowerCase(Locale.ROOT).equals("meizu")) {
+                doze = new Intent("com.meizu.safe.security.SHOW_APPSEC");
+                doze.addCategory(Intent.CATEGORY_DEFAULT);
+                doze.putExtra("packageName", BuildConfig.APPLICATION_ID);
+                textId = R.string.msg_doze_meizu;
+            } else {
+                doze = new Intent(Settings.ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS);
+                textId = R.string.msg_doze;
+            }
+
             if (Util.batteryOptimizing(this) && getPackageManager().resolveActivity(doze, 0) != null) {
                 final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
                 if (!prefs.getBoolean("nodoze", false)) {
                     LayoutInflater inflater = LayoutInflater.from(this);
                     View view = inflater.inflate(R.layout.doze, null, false);
                     final CheckBox cbDontAsk = view.findViewById(R.id.cbDontAsk);
+                    final TextView textView = view.findViewById(R.id.textView);
+                    if (textView != null) {
+                        textView.setText(textId);
+                    }
                     dialogDoze = new AlertDialog.Builder(this)
                             .setView(view)
                             .setCancelable(true)
