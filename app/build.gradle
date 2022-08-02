@@ -17,8 +17,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 def versionMajor = 1
-def versionMinor = 0
-def versionPatch = 7
+def versionMinor = 1
+def versionPatch = 0
 
 android {
     compileSdkVersion = 32
@@ -124,6 +124,8 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
 
     implementation "androidx.constraintlayout:constraintlayout:2.1.0"
+
+    implementation 'com.android.billingclient:billing-ktx:5.0.0'
 }
 repositories {
     mavenCentral()
