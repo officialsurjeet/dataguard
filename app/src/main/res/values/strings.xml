@@ -351,4 +351,7 @@
     <string name="fingerprint" translatable="false">ef46f813d2c8a064d72c936b9b96d1cccc989378</string>
     <string name="app_label" translatable="false">Full DataGuard</string>
     <string name="msg_doze_meizu">We kindly suggest Allow work at background to keep it active and provide its stable work on the background. </string>
+
+    <string name="setting_donation_title">Support us</string>
+    <string name="setting_donation_description">Buy Fulldive a cup of coffee</string>
 </resources>

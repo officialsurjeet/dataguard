@@ -392,4 +392,9 @@
                 android:title="@string/setting_technical_networks" />
         </PreferenceCategory>
     </PreferenceScreen>
+
+    <Preference
+        android:key="donate_us"
+        android:summary="@string/setting_donation_description"
+        android:title="@string/setting_donation_title" />
 </PreferenceScreen>

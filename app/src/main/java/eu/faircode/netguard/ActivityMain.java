@@ -61,11 +61,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.fulldive.startapppopups.PopupManager;
+
 import java.util.List;
 import java.util.Locale;
 
 import eu.faircode.netguard.appextension.AppExtensionWorkType;
-import eu.faircode.netguard.appextension.PopupManager;
 
 public class ActivityMain extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
     private static final String TAG = "NetGuard.Main";
@@ -408,7 +409,17 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
         // Handle intent
         checkExtras(getIntent());
 
-        new PopupManager().onAppStarted(this);
+        new PopupManager().onAppStarted(
+                this,
+                BuildConfig.APPLICATION_ID,
+                true,
+                true,
+                true,
+                0,
+                (action) -> {
+                    return null;
+                }
+        );
         String workType = getIntent().getAction();
         if (workType != null && workType.equals(AppExtensionWorkType.OPEN.INSTANCE.getId())) {
             final Intent prepareIntent = VpnService.prepare(this);
@@ -515,6 +526,8 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
             dialogAbout.dismiss();
             dialogAbout = null;
         }
+
+//        DonationManager.INSTANCE.destroy();
 
         super.onDestroy();
     }

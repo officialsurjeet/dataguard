@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~     This file is part of NetGuard.
   ~     NetGuard is free software: you can redistribute it and/or modify
   ~     it under the terms of the GNU General Public License as published by
@@ -393,4 +392,9 @@
                 android:title="@string/setting_technical_networks" />
         </PreferenceCategory>
     </PreferenceScreen>
+
+    <Preference
+        android:key="donate_us"
+        android:summary="@string/setting_donation_description"
+        android:title="@string/setting_donation_title" />
 </PreferenceScreen>
