@@ -62,6 +62,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.fulldive.startapppopups.PopupManager;
+import com.fulldive.startapppopups.donation.DonationManager;
 
 import java.util.List;
 import java.util.Locale;
@@ -527,7 +528,7 @@ public class ActivityMain extends AppCompatActivity implements SharedPreferences
             dialogAbout = null;
         }
 
-//        DonationManager.INSTANCE.destroy();
+        DonationManager.INSTANCE.destroy();
 
         super.onDestroy();
     }

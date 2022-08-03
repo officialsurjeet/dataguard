@@ -14,5 +14,3 @@
  */
 
 include ':app'
-include ':startapppopups'
-include ':iap'

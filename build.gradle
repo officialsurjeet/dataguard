@@ -35,14 +35,14 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url "http://office.fulldive.com:8083"
+            allowInsecureProtocol = true
+        }
         jcenter()
         mavenCentral()
         maven {
             url 'https://maven.google.com'
-        }
-        maven {
-            url "http://office.fulldive.com:8083"
-            allowInsecureProtocol = true
         }
     }
 }
