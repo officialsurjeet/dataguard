@@ -16,7 +16,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.5.30'
+    ext.kotlin_version = '1.7.0'
     repositories {
         google()
         jcenter()
@@ -35,6 +35,10 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url "http://office.fulldive.com:8083"
+            allowInsecureProtocol = true
+        }
         jcenter()
         mavenCentral()
         maven {

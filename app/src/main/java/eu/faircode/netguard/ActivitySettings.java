@@ -35,17 +35,13 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
-import android.preference.ListPreference;
 import android.preference.MultiSelectListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.preference.TwoStatePreference;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
 import android.text.TextUtils;
-import android.text.style.ImageSpan;
 import android.util.Log;
 import android.util.Xml;
 import android.view.LayoutInflater;
@@ -60,6 +56,9 @@ import androidx.core.app.NavUtils;
 import androidx.core.util.PatternsCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.PreferenceManager;
+
+import com.fulldive.startapppopups.PopupManager;
+import com.fulldive.startapppopups.donation.DonationManager;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
@@ -430,6 +429,26 @@ public class ActivitySettings extends AppCompatActivity implements SharedPrefere
         pref_technical_info.setOnPreferenceClickListener(listener);
         pref_technical_network.setOnPreferenceClickListener(listener);
         updateTechnicalInfo();
+
+        Preference donateUs = screen.findPreference("donate_us");
+        if (donateUs != null) {
+            donateUs.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    DonationManager.INSTANCE.purchaseFromSettings(
+                            ActivitySettings.this,
+                            () -> {
+                                return null;
+                            },
+                            () -> {
+                                new PopupManager().showDonationSuccess(ActivitySettings.this);
+                                return null;
+                            }
+                    );
+                    return true;
+                }
+            });
+        }
     }
 
     @Override
