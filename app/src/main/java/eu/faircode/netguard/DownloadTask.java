@@ -29,6 +29,8 @@ import android.widget.Toast;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import com.full.dialer.top.secure.encrypted.namespace.R;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

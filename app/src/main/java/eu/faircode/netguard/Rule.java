@@ -28,6 +28,8 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
+import com.full.dialer.top.secure.encrypted.namespace.R;
+
 import org.xmlpull.v1.XmlPullParser;
 
 import java.text.Collator;

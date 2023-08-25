@@ -1,5 +1,8 @@
-
 cmake_minimum_required(VERSION 3.4.1)
+
+project(test)
+
+set(PROJECT_NAME test)
 
 add_library( netguard
              SHARED

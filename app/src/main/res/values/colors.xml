@@ -17,10 +17,10 @@
 <resources>
     <!-- https://www.materialpalette.com/teal/deep-orange -->
 
-    <color name="colorTealPrimary">#009688</color>
-    <color name="colorTealPrimaryDark">#00796B</color>
+    <color name="colorTealPrimary">#705BE7</color>
+    <color name="colorTealPrimaryDark">#311BB1</color>
     <color name="colorTealAccent">#FF5722</color>
-    <color name="colorTealOn">#009688</color>
+    <color name="colorTealOn">#311BB1</color>
     <color name="colorTealOff">#FF5722</color>
 
     <color name="colorBluePrimary">#2196F3</color>
@@ -60,5 +60,5 @@
 
     <color name="textColorPrimary">#0D1826</color>
     <color name="textColorSecondary">#BABDC1</color>
-    <color name="textColorAccent">#FF9900</color>
+    <color name="textColorAccent">#705BE7</color>
 </resources>

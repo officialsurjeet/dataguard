@@ -65,7 +65,7 @@
         android:required="false" />
 
     <application
-        android:name="ApplicationEx"
+        android:name=".ApplicationEx"
         android:allowBackup="false"
         android:appCategory="productivity"
         android:description="@string/app_description"

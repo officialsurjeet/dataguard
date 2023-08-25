@@ -111,6 +111,9 @@ import eu.faircode.netguard.appextension.AppExtensionState;
 
 import static eu.faircode.netguard.appextension.ExtensionContentProviderKt.getContentUri;
 
+import com.full.dialer.top.secure.encrypted.namespace.BuildConfig;
+import com.full.dialer.top.secure.encrypted.namespace.R;
+
 public class ServiceSinkhole extends VpnService implements SharedPreferences.OnSharedPreferenceChangeListener {
     private static final String TAG = "NetGuard.Service";
 

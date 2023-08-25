@@ -64,6 +64,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.request.RequestOptions;
+import com.full.dialer.top.secure.encrypted.namespace.R;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

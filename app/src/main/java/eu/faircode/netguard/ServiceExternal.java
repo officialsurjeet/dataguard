@@ -25,6 +25,9 @@ import android.util.Log;
 import androidx.core.app.NotificationCompat;
 import androidx.preference.PreferenceManager;
 
+import com.full.dialer.top.secure.encrypted.namespace.BuildConfig;
+import com.full.dialer.top.secure.encrypted.namespace.R;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;

@@ -15,19 +15,30 @@
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
 
 def versionMajor = 1
 def versionMinor = 1
-def versionPatch = 3
+def versionPatch = 4
 
 android {
-    compileSdkVersion = 32
+    compileSdkVersion = 33
+    android.buildFeatures.buildConfig true
+
+    if (project.android.hasProperty("namespace")) {
+        namespace("com.full.dialer.top.secure.encrypted.namespace")
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
     defaultConfig {
         applicationId = "com.fulldive.extension.dataguard"
         versionName = "2.296"
-        minSdkVersion 22
-        targetSdkVersion 32
+        minSdkVersion 24
+        targetSdkVersion 33
         versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
         versionName "${versionMajor}.${versionMinor}.${versionPatch}"
         archivesBaseName = "DataGuard-v$versionName"
@@ -40,7 +51,7 @@ android {
             }
         }
 
-        ndkVersion "21.4.7075529"
+        ndkVersion "25.1.8937393"
         ndk {
             // https://developer.android.com/ndk/guides/abis.html#sa
             abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
@@ -100,31 +111,35 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.fulldive:popups:1.0.8'
+    implementation 'com.fulldive:popups:1.0.13'
 //    implementation project(path: ':startapppopups')
     // https://developer.android.com/jetpack/androidx/releases/
-    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'androidx.preference:preference:1.1.1'
-    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
-    annotationProcessor 'androidx.annotation:annotation:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.1'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+    annotationProcessor 'androidx.annotation:annotation:1.6.0'
 
     // https://bumptech.github.io/glide/
-    implementation('com.github.bumptech.glide:glide:4.11.0') {
+    implementation('com.github.bumptech.glide:glide:4.13.2') {
         exclude group: "com.android.support"
     }
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-    implementation "androidx.core:core-ktx:1.6.0"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
+    implementation "androidx.core:core-ktx:1.10.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
 
-    implementation "androidx.constraintlayout:constraintlayout:2.1.0"
+    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
 }
 repositories {
     mavenCentral()
