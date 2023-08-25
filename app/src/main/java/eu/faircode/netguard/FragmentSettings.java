@@ -18,6 +18,8 @@ package eu.faircode.netguard;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 
+import com.full.dialer.top.secure.encrypted.namespace.R;
+
 public class FragmentSettings extends PreferenceFragment {
 
     @Override

@@ -24,6 +24,8 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
+import com.full.dialer.top.secure.encrypted.namespace.R;
+
 public class AdapterForwarding extends CursorAdapter {
     private int colProtocol;
     private int colDPort;

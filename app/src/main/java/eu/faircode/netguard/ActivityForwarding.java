@@ -36,6 +36,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.full.dialer.top.secure.encrypted.namespace.R;
+
 import java.net.InetAddress;
 import java.util.List;
 

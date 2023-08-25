@@ -23,6 +23,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.full.dialer.top.secure.encrypted.namespace.R;
+
 import java.net.InetAddress;
 
 public class ActivityForwardApproval extends Activity {

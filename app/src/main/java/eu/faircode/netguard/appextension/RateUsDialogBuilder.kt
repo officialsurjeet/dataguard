@@ -21,7 +21,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import androidx.appcompat.widget.AppCompatRatingBar
 import androidx.core.content.ContextCompat
-import eu.faircode.netguard.R
+import com.full.dialer.top.secure.encrypted.namespace.R
 import kotlin.math.roundToInt
 
 object RateUsDialogBuilder {

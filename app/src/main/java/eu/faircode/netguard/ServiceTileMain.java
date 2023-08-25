@@ -30,6 +30,8 @@ import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
+import com.full.dialer.top.secure.encrypted.namespace.R;
+
 import java.util.Date;
 
 @TargetApi(Build.VERSION_CODES.N)

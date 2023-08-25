@@ -27,6 +27,8 @@ import android.widget.Toast;
 
 import androidx.preference.PreferenceManager;
 
+import com.full.dialer.top.secure.encrypted.namespace.R;
+
 @TargetApi(Build.VERSION_CODES.N)
 public class ServiceTileFilter extends TileService implements SharedPreferences.OnSharedPreferenceChangeListener {
     private static final String TAG = "NetGuard.TileFilter";

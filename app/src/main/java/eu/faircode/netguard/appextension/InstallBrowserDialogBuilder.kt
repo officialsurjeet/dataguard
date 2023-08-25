@@ -20,7 +20,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import androidx.core.content.ContextCompat
-import eu.faircode.netguard.R
+import com.full.dialer.top.secure.encrypted.namespace.R
 
 object InstallBrowserDialogBuilder {
 

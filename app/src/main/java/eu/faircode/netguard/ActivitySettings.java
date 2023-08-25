@@ -57,6 +57,8 @@ import androidx.core.util.PatternsCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.preference.PreferenceManager;
 
+import com.full.dialer.top.secure.encrypted.namespace.BuildConfig;
+import com.full.dialer.top.secure.encrypted.namespace.R;
 import com.fulldive.startapppopups.PopupManager;
 import com.fulldive.startapppopups.donation.DonationManager;
 

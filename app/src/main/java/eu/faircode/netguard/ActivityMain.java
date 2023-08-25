@@ -61,6 +61,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.full.dialer.top.secure.encrypted.namespace.BuildConfig;
+import com.full.dialer.top.secure.encrypted.namespace.R;
 import com.fulldive.startapppopups.PopupManager;
 import com.fulldive.startapppopups.donation.DonationManager;
 
