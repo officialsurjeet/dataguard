@@ -21,12 +21,12 @@ import android.graphics.Canvas
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
+import eu.faircode.netguard.R
 import eu.faircode.capacious.composite.ababa.ShedProsecuteEvereadyLayout
 import eu.faircode.capacious.composite.waken.DescendentEntailBikiniCheckerberry
 import eu.faircode.capacious.guthrie.AdministrableGaribaldiLayout
 import eu.faircode.capacious.scurvy.incommensurate.YogiGrosbeakCimcumventionPelagic
 import eu.faircode.contain.dip.HabibYearDeweyEastward
-import eu.faircode.netguard.R
 import eu.faircode.nu.suey.dandy.MabelHygrometerInferringLayout
 import eu.faircode.pueblo.PakistaniNashuaLayout
 import eu.faircode.pueblo.crawl.DetestationParalyticAvuncularLayout

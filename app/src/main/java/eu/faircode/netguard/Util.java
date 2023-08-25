@@ -56,8 +56,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.net.ConnectivityManagerCompat;
 import androidx.preference.PreferenceManager;
 
-import com.full.dialer.top.secure.encrypted.namespace.BuildConfig;
-import com.full.dialer.top.secure.encrypted.namespace.R;
+import eu.faircode.netguard.BuildConfig;
+import eu.faircode.netguard.R;
 
 import java.io.BufferedReader;
 import java.io.File;

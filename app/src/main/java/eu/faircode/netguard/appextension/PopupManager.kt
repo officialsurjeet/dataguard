@@ -19,7 +19,7 @@ package eu.faircode.netguard.appextension
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
-import com.full.dialer.top.secure.encrypted.namespace.BuildConfig
+import eu.faircode.netguard.BuildConfig
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request

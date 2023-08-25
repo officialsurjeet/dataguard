@@ -21,7 +21,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.widget.EditText
 import androidx.core.content.ContextCompat
-import com.full.dialer.top.secure.encrypted.namespace.R
+import eu.faircode.netguard.R
 
 object RateReportDialogBuilder {
 

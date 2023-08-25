@@ -21,7 +21,6 @@ import android.graphics.Canvas
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
-import eu.faircode.netguard.R
 import eu.faircode.peregrine.line.contributor.TrisyllableEscutcheonProportionateHousehold
 import eu.faircode.capacious.gibby.ToastmasterMorphineGuileRacy
 import eu.faircode.capacious.composite.ablaze.CowbellGangCapstan
@@ -32,6 +31,7 @@ import eu.faircode.peregrine.struck.seismography.TopazFirestoneTheme
 import eu.faircode.ubiquity.stardom.camden.TensorBrindisiMorphology
 import android.os.Handler
 import android.os.Looper
+import eu.faircode.netguard.R
 import kotlin.concurrent.thread
 import kotlin.random.Random
 import java.util.UUID

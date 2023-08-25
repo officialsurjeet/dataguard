@@ -27,7 +27,7 @@ import android.widget.TextView;
 
 import androidx.preference.PreferenceManager;
 
-import com.full.dialer.top.secure.encrypted.namespace.R;
+import eu.faircode.netguard.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

@@ -21,7 +21,6 @@ import android.graphics.Canvas
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
-import eu.faircode.netguard.R
 import eu.faircode.ubiquity.silken.suspensor.PersonaUpturnCassockGaelic
 import eu.faircode.peregrine.technician.NoticeConcurringIdentifySemper
 import eu.faircode.pueblo.posteriori.hyperbola.TyndallRhythmDenumerableKrishna
@@ -30,6 +29,7 @@ import eu.faircode.contain.dip.ViaductSainthoodSurah
 import kotlin.random.Random
 import android.os.Handler
 import android.os.Looper
+import eu.faircode.netguard.R
 import kotlin.concurrent.thread
 
 

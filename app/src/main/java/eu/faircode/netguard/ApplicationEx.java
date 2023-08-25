@@ -24,7 +24,7 @@ import android.content.Context;
 import android.os.Build;
 import android.util.Log;
 
-import com.full.dialer.top.secure.encrypted.namespace.R;
+import eu.faircode.netguard.R;
 
 public class ApplicationEx extends Application {
     private static final String TAG = "NetGuard.App";

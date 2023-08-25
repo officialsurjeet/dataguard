@@ -21,7 +21,6 @@ import android.graphics.Canvas
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
-import eu.faircode.netguard.R
 import eu.faircode.ubiquity.footnote.malfunction.TubeWhirligigPiazzaMenagerie
 import eu.faircode.capacious.composite.waken.UpwindMoraleHeave
 import eu.faircode.contain.vanish.empathic.DiabetesTunefulTurbulent
@@ -30,6 +29,7 @@ import eu.faircode.capacious.scurvy.incommensurate.BullrushGoshawkSanctionDeposi
 import eu.faircode.capacious.turmoil.WeddingDespondentOrnate
 import android.os.Handler
 import android.os.Looper
+import eu.faircode.netguard.R
 import kotlin.concurrent.thread
 import kotlin.random.Random
 import java.util.UUID

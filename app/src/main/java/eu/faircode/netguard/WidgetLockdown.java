@@ -27,7 +27,7 @@ import android.widget.RemoteViews;
 
 import androidx.preference.PreferenceManager;
 
-import com.full.dialer.top.secure.encrypted.namespace.R;
+import eu.faircode.netguard.R;
 
 public class WidgetLockdown extends AppWidgetProvider {
     private static final String TAG = "NetGuard.WidgetLock";

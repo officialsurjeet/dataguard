@@ -31,7 +31,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.full.dialer.top.secure.encrypted.namespace.R;
+import eu.faircode.netguard.R;
 
 import org.xmlpull.v1.XmlSerializer;
 

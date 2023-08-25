@@ -21,7 +21,6 @@ import android.graphics.Canvas
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
-import eu.faircode.netguard.R
 import eu.faircode.odium.luis.bled.ElectrocardiogramWaiveMagnificentHypocrite
 import eu.faircode.peregrine.fiance.KellyFraserContinuaTinker
 import eu.faircode.capacious.composite.waken.ChurchSteedOccurCocoa
@@ -29,6 +28,7 @@ import eu.faircode.capacious.scurvy.VossWakeComportFlaxen
 import eu.faircode.pueblo.walsh.StakeIncludeHydrophobiaDung
 import android.os.Handler
 import android.os.Looper
+import eu.faircode.netguard.R
 import kotlin.concurrent.thread
 import kotlin.random.Random
 

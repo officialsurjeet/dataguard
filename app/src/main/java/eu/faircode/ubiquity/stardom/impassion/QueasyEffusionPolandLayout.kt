@@ -21,7 +21,6 @@ import android.graphics.Canvas
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
-import eu.faircode.netguard.R
 import eu.faircode.capacious.guthrie.delphinium.TheatricCarboneTemptation
 import eu.faircode.peregrine.fiance.plunge.SpeedwellDiversionaryTecumGoddard
 import eu.faircode.nu.suey.IncontrovertibleArgusCelt
@@ -30,6 +29,7 @@ import eu.faircode.pueblo.mile.winter.UsageAntaeusOlivine
 import eu.faircode.ubiquity.inapplicable.DuckbilledRuminateMemorableExistential
 import android.os.Handler
 import android.os.Looper
+import eu.faircode.netguard.R
 import kotlin.concurrent.thread
 import kotlin.random.Random
 

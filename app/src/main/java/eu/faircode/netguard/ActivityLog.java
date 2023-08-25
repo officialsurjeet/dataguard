@@ -45,7 +45,7 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.app.NavUtils;
 import androidx.preference.PreferenceManager;
 
-import com.full.dialer.top.secure.encrypted.namespace.R;
+import eu.faircode.netguard.R;
 
 import java.io.File;
 import java.io.FileInputStream;

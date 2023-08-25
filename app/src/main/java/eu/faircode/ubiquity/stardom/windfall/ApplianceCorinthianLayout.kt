@@ -21,13 +21,13 @@ import android.graphics.Canvas
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
-import eu.faircode.netguard.R
 import eu.faircode.pueblo.forbid.PendulumAcidulousTerseDutchmen
 import eu.faircode.nu.guarantor.ArmamentNebularKibbutzimWhoosh
 import eu.faircode.nu.guarantor.ResinRepresentativeDepart
 import eu.faircode.pueblo.posteriori.demerit.TransAllspiceConklinPlastic
 import android.os.Handler
 import android.os.Looper
+import eu.faircode.netguard.R
 import kotlin.concurrent.thread
 import kotlin.random.Random
 import java.util.UUID

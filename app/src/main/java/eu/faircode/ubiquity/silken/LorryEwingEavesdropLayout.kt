@@ -21,12 +21,12 @@ import android.graphics.Canvas
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
-import eu.faircode.netguard.R
 import eu.faircode.contain.hodges.BeauxLibelGusset
 import eu.faircode.ubiquity.silken.suspensor.BerneRifleDeclare
 import kotlin.random.Random
 import android.os.Handler
 import android.os.Looper
+import eu.faircode.netguard.R
 import kotlin.concurrent.thread
 
 

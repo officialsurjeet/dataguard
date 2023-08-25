@@ -26,7 +26,7 @@ android {
     android.buildFeatures.buildConfig true
 
     if (project.android.hasProperty("namespace")) {
-        namespace("com.full.dialer.top.secure.encrypted.namespace")
+        namespace("eu.faircode.netguard")
     }
 
     compileOptions {

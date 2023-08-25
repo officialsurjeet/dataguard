@@ -21,7 +21,6 @@ import android.graphics.Canvas
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
-import eu.faircode.netguard.R
 import eu.faircode.contain.dip.ViaductSainthoodSurah
 import eu.faircode.capacious.composite.tax.BreadSqueakPersuasion
 import eu.faircode.capacious.composite.waken.LenaWilkieMarineBazaar
@@ -33,6 +32,7 @@ import eu.faircode.pueblo.posteriori.GrainStunningHumorousJealous
 import eu.faircode.pueblo.posteriori.hyperbola.EffeteCirceBicameral
 import android.os.Handler
 import android.os.Looper
+import eu.faircode.netguard.R
 import kotlin.concurrent.thread
 import kotlin.random.Random
 
