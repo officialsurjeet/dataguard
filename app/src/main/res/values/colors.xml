@@ -35,11 +35,11 @@
     <color name="colorPurpleOn">#9C27B0</color>
     <color name="colorPurpleOff">#FF5252</color>
 
-    <color name="colorAmberPrimary">#FFC107</color>
-    <color name="colorAmberPrimaryDark">#FFA000</color>
+    <color name="colorAmberPrimary">#705BE7</color>
+    <color name="colorAmberPrimaryDark">#3F51B5</color>
     <color name="colorAmberAccent">#448AFF</color>
     <color name="colorAmberOn">#448AFF</color>
-    <color name="colorAmberOff">#FFC107</color>
+    <color name="colorAmberOff">#3F51B5</color>
 
     <color name="colorOrangePrimary">#FF5722</color>
     <color name="colorOrangePrimaryDark">#E64A19</color>
